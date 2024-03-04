@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root{
+    --verde1:#67e7d5;
+    --verde2:#4dd4c3;
+    --verde3:#3ac2b1;
+    --verde4:#1aaf9e;
+    --verde5:#009c8c;
+    --white:#fff;
+    --gray:#dedcdc;
+    --black:#222;
+    --black2:#999;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+.container{
+    position: relative;
+    width: 100%;
+}
+
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--verde5);
+    border-left:  10px solid var(--verde5);
+    transition: .5s ;
+    overflow: hidden;
+}
+
+.navigation.active{
+    width: 80px;
+
+}
+
+.navigation ul{
+    margin-top: 30px ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+
+}
+
+.navigation ul li:hover{
+    background: var(--white);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    color: var(--white);
+    margin-top: 50px;
+    line-height: 75px;
+    font-weight: 500;
+}
+
+
+.navigation ul li:hover a{
+    color: var(--verde5);
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .icon i{
+    font-size: 1.75rem;
+}
+.navigation ul li a .text {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 65px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.navigation ul li:hover a::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow:  35px 35px 0 10px var(--white);
+    pointer-events: none;
+
+}
+
+.navigation ul li:hover a::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow:  35px -35px 0 10px var(--white);
+    pointer-events: none;
+
+}
+
+.partial{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+    transition: .5s;
+}
+
+.partial.active{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.toggle {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+body.disable-transition .partial,
+body.disable-transition .navigation {
+  transition: none;
+}
+
+@media(max-width: 991px){
+    .navigation{
+        left: -300px;
+    }
+    .navigation.active{
+        width: 300px;
+        left: 0;
+    }
+    .partial{
+        width: 100%;
+        left: 0;
+    }
+    .partial.active{
+        left: 300px;
+    }
+    .toggle {
+        position: relative;
+        z-index: 90;
+        color: var(--verde1)
+    }
+}
+
+@media (max-width:480px){
+
+    .navigation{
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+    .navigation.active{
+        width: 100%;
+        left: 0;
+    }
+    .toggle{
+        position: relative;
+        z-index: 1000;
+        color: var(--verde1);
+    }
+    .partial.active .toggle{
+        color: var(--verde1);
+        position: fixed;
+        right: 0;
+        left: initial;
+    }
+}
+
+.excluir {
+    left: 100;
+    position: relative;
+    left: 90%;
+    top: 0;
+    bottom: 30%;
+    cursor: pointer;
+}
+
+.delete-paciente {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 101;
+}
+
+.aviso-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 30%;
+    left: 0%;
+    cursor: default;
+}
+
+.delete-paciente .btn-danger {
+    display: inline-block;
+    padding: 3px;
+    background-color: #ff0000;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 10px;
+    width: 10rem;
+    margin-top: 20px;
+}
+
+.delete-paciente .btn-secondary {
+    display: inline-block;
+    padding: 3px;
+    cursor: pointer;
+    background-color: #777;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 10px;
+    width: 10rem;
+    margin-top: 20px;
+}

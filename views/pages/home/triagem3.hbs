@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Formulário de Triagem</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- ================================ CSS ================================ -->
+  <link rel="stylesheet" href="/css/home/pages/triagemIdosos.css">
+  <!-- ============================ FONT AWESOME ===========================-->
+  <link rel="stylesheet" href="/frameworks/awesome/css/fontawesome.css">
+  <!-- ================================ JS ================================ -->
+  <script src="/js/home/pages/triagemIdosos.js" defer></script>
+</head>
+
+<body>
+
+  <a href="/home/{{nutricionistas.id_nutri}}/pacientes/{{paciente.id_pacientes}}">
+    <div class="back">
+      <i class="fa-solid fa-arrow-left fa-2xl" style="color: #ffffff;"></i>
+    </div>
+  </a>
+
+  <div class="titles">
+    <h1>Triagem Nutricional</h1>
+    <h3>MAN (Mini Nutritional Assessment) – Idosos</h3>
+    <p>Avalição Nutricional Subjetiva</p>
+  </div>
+
+  <fieldset>
+    <div class="question">
+      <p>1. Nos últimos três meses houve diminuição da ingesta alimentar devido a perda de apetite, problemas digestivos
+        ou dificuldade para mastigar ou deglutir?</p><br>
+
+      <input type="radio" name="perguntaA" value="0"> Diminuição grave da ingesta <br>
+      <input type="radio" name="perguntaA" value="1"> Diminuição moderada da ingesta <br>
+      <input type="radio" name="perguntaA" value="2"> Sem diminuição da ingesta <br>
+    </div>
+  </fieldset><br>
+
+
+  <fieldset>
+    <div class="question">
+      <p>2. Perda de peso nos últimos 3 meses?</p><br>
+      <input type="radio" name="perguntaB" value="0"> Superior a três quilos <br>
+      <input type="radio" name="perguntaB" value="1"> Não sabe informar <br>
+      <input type="radio" name="perguntaB" value="2"> Entre um e três quilos <br>
+      <input type="radio" name="perguntaB" value="3"> Sem perda de peso <br>
+    </div>
+  </fieldset><br>
+
+
+  <fieldset>
+    <div class="question">
+      <p>3. Mobilidade?</p><br>
+
+      <input type="radio" name="perguntaC" value="0"> Restrito ao leito ou à cadeira de rodas <br>
+      <input type="radio" name="perguntaC" value="1"> Deambula mas não é capaz de sair de casa <br>
+      <input type="radio" name="perguntaC" value="2"> Normal <br>
+    </div>
+  </fieldset><br>
+
+
+  <fieldset>
+    <div class="question">
+
+      <p>4. Passou por algum stress psicológico ou doença aguda nos
+        últimos três meses?</p><br>
+      <input type="radio" name="perguntaD" value="0"> Sim <br>
+      <input type="radio" name="perguntaD" value="2"> Não <br>
+  </fieldset><br>
+
+
+  <fieldset>
+    <div class="question">
+      <p>5. Problemas Neuropsicológicos</p><br>
+      <input type="radio" name="perguntaE" value="0"> Demência u depressão graves <br>
+      <input type="radio" name="perguntaE" value="1"> Demência ligeira <br>
+      <input type="radio" name="perguntaE" value="2"> Sem problemas psiclógicos <br>
+    </div>
+  </fieldset><br>
+
+
+  <fieldset>
+    <div class="question">
+      <p>6. Índice de Massa Corporal = peso em kg / (estatura em my)²</p><br>
+      <input type="radio" name="perguntaF" value="0"> IMC < 19 <br>
+        <input type="radio" name="perguntaF" value="1"> >= 19 IMC < 21 <br>
+          <input type="radio" name="perguntaF" value="2"> >= 21 IMC < 23 <br>
+            <input type="radio" name="perguntaF" value="3"> IMC >= 23 <br>
+    </div>
+  </fieldset><br>
+
+
+  <div class="result">
+    <h3>Resultado do Questionário:</h3>
+
+    <div id="resultContainer">
+      <p id="riscoText"></p>
+      <p id="recomendacoes"></p>
+    </div>
+  </div>
+
+
+  <div class="btn">
+    <button type="submit" id="acao" onclick="calcularPontuacao()">Enviar</button>
+    <button type="submit" id="limpar" onclick="limparCampos()">Limpar</button>
+  </div>
+
+
+
+</body>
+
+</html>

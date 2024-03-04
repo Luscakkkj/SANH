@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Estilos gerais */
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background-color: #f2f2f2;
+	margin: 0;
+	padding: 0;
+}
+
+:root{
+	--success: #30cd6c;
+    --error: #ff676a;
+}
+
+#dietRecommendation,
+#supplements {
+	max-width: 25rem;
+	min-width: 25rem;
+}
+
+.back{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position:  fixed;
+	left: 20px;
+	top: 20px;
+    height: 3rem;
+    width: 3rem;
+	background-color: #00ae9d;
+	border-radius: 50%;
+	border: 4px solid #006c61;
+	z-index: 100;
+}
+
+.back:hover{
+	background-color: #43dbca;
+	cursor: pointer;
+}
+
+h1 {
+	text-align: center;
+	color: #00ae9d;
+	font-size: 2.5rem;
+}
+
+form {
+	display: flex;
+	background-color: #fff;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	flex-direction: column;
+}
+
+/* Estilos para rótulos e campos de entrada */
+label {
+	display: block;
+	margin-top: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+	width: 100%;
+	padding: 5px;
+	margin-top: 15px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-right: 30px;
+
+}
+
+/* Estilos para o botão de envio */
+button,
+input[type="submit"] {
+	background-color: #00ae9d;
+	color: #fff;
+	padding: 10px 15px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-top: 10px;
+
+}
+button:hover,
+input[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+.dados{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.alert {
+	min-height: 67px;
+	width:400px;
+	border-radius: 12px;
+	padding: 16px 22px 17px 20px;
+	display: flex;
+	font-weight: bolder;
+	align-items: center;
+	margin: 10px auto;
+	align-items: center;
+}
+
+.alert-success {
+	background: var(--success);
+}
+
+.alert-error {
+	background: var(--error);
+}
+
+.alert .icon__wrapper {
+	height: 34px;
+	width: 34px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.253);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.alert .icon__wrapper span {
+	font-size: 21px;
+	color: #fff;
+}
+
+.alert p {
+	color: #fff;
+	margin-left: 10px;
+}
+
+@media screen and (max-width: 767px) {
+	h1{
+		font-size: 30px;
+	}
+
+   body{
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+   }
+
+   form{
+		display: flex;
+		flex-direction: column;
+		width: 70%;
+   }
+
+   #dietRecommendation,
+	#supplements {
+		max-width: 100%;
+		min-width: 12.5rem;
+	}
+
+	.back{
+		display: none;
+	}
+
+}

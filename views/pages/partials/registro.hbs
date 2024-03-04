@@ -1,0 +1,140 @@
+{{#if erro}}
+  <div class="alert alert-error">
+    <div class="icon__wrapper"><i class="fa-regular fa-circle-xmark" style="color: #ff1414;"></i></div>
+    <span class="mdi mdi-alert-outline"></span>
+    <p>{{erro}}</p>
+  </div>
+{{/if}}
+
+
+
+{{#if sucesso}}
+  <div class="alert alert-success">
+    <div class="icon__wrapper "> <i class="fa-solid fa-check" style="color: #26a269;"></i></div>
+    <span class="mdi mdi-alert-outline"></span>
+    <p>{{sucesso}}</p>
+  </div>
+{{/if}}
+
+
+<form action="/home/registro/pacientes" method="post" class="form" enctype="multipart/form-data" name="formulario">
+  <ul class="progress">
+    <li class="active">Situação do Paciente</li>
+    <li>Dados Pessoais</li>
+    <li>Dados Hospitalares</li>
+    <li>Dados antropométricos</li>
+  </ul>
+
+  <fieldset>
+    <h2>Situação Do Paciente</h2>
+    <h3>Informe a Situção do Paciente</h3>
+    <label class="situação">Situação do Paciente:</label><br>
+    <input type="radio" id="ambulatorio" name="situacao" value="deambula" checked class="radio">
+    <label for="ambulatorio">Deambula</label><br>
+    <input type="radio" id="acamado" name="situacao" value="acamado" class="radio">
+    <label for="acamado">Acamado</label><br>
+    <button class="next acao" type="button" id="next2">Próximo</button>
+  </fieldset>
+
+
+  <fieldset>
+    <h2>Dados Pessoais</h2>
+    <h3>Informe os dados pessoais do paciente</h3>
+    <label>Nome:</label><br>
+    <input type="text" name="nome" id="name" placeholder="Nome completo do Paciente"><br>
+    <label>Telefone:</label><br>
+    <input type="text" name="telefone" id="tel" placeholder="(00)00000-0000"><br>
+    <label>Foto:</label>
+    <div class="foto" id="imagem">
+      <input type="file" name="file" accept="image/*">
+    </div>
+    <div class="select">
+      <div class="uf">
+        <label>UF:</label>
+        <select id="uf">
+          <option></option>
+        </select>
+      </div>
+      <div class="city">
+        <label>Cidade:</label>
+        <select name="cidade" id="city">
+          <option></option>
+        </select>
+      </div>
+    </div><br>
+    <div class="containers">
+      <div class="nas">
+        <label>Data de Nascimento:</label><br>
+        <input type="date" id="date_nascimento" name="nascimento">
+      </div>
+      <div class="idade">
+        <label>Idade:</label><br>
+        <input type="number" id="idade" name="idade" placeholder="Idade do Paciente">
+        <br><br>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="genero">
+        <label>Gênero:</label> <br>
+        <input type="radio" id="homem" name="genero" value="Homem" class="radio">
+        <label for="homem">Homem Cisgênero</label> <br>
+        <input type="radio" id="mulher" name="genero" value="Mulher" class="radio">
+        <label for="mulher">Mulher Cisgênero</label> <br>
+        <input type="radio" id="Htrans" name="genero" value="Homem Transgênero" class="radio">
+        <label for="Htrans">Homem Transgênero</label> <br>
+        <input type="radio" id="Mtrans" name="genero" value="Mulher Transgênero" class="radio">
+        <label for="Mtrans">Mulher Transgênero</label> <br>
+        <label for="outros">Outro:</label>
+        <input type="text" name="outro" id="outros">
+      </div>
+
+      <div class="sexo">
+        <label>Sexo:</label><br>
+        <input type="radio" id="feminino" name="sexo" value="F" class="radio">
+        <label for="feminino">Feminino</label><br>
+        <input type="radio" id="masculino" name="sexo" value="M" class="radio">
+        <label for="masculino">Masculino</label><br><br>
+      </div>
+
+      <div class="raca">
+        <label>Raça:</label><br>
+        <input type="radio" id="feminino" name="raca" value="BRANCA" class="radio">
+        <label for="feminino">Branca</label><br>
+        <input type="radio" id="masculino" name="raca" value="NEGRA" class="radio">
+        <label for="masculino">Negra</label><br>
+        <input type="radio" id="masculino" name="raca" value="PARDA" class="radio">
+        <label for="masculino">Parda</label><br>
+        <input type="radio" id="masculino" name="raca" value="AMARELA" class="radio">
+        <label for="masculino">Amarela</label><br>
+        <input type="radio" id="masculino" name="raca" value="INDIGENA" class="radio">
+        <label for="masculino">Indigena</label><br>
+      </div>
+    </div>
+    <button class="prev acao" type="button" id="prev">Voltar</button>
+    <button class="next acao" type="button" id="next3">Próximo</button>
+  </fieldset>
+
+  <fieldset>
+    <h2>Dados Hospitalares</h2>
+    <h3>Informações clínicas do Paciente</h3>
+    <label for="setor">Setor:</label>
+    <select class="setor" name="setor">Setor:
+      <option value="UTI I" selected>UTI I</option>
+      <option value="UTI II">UTI II</option>
+      <option value="Unidade Coronariana">Unidade Coronariana</option>
+      <option value="Pronto atendimento">Pronto atendimento</option>
+      <option value="São José">São José</option>
+      <option value="São Joaquim">São Joaquim</option>
+    </select> <br>
+    <label>Número do Leito:</label><br>
+    <input type="number" name="leito" id="leito" placeholder="Número do Leito"> <br>
+    <label>Data de Admissão:</label><br>
+    <input type="date" name="data" id="date"><br>
+    <button class="prev acao" type="button" id="prev">Voltar</button>
+    <button class="next acao" type="button" id="next2">Próximo</button>
+  </fieldset>
+
+  <fieldset id="antropometria">
+  </fieldset>
+</form>

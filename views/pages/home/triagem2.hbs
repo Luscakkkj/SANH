@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Triagem Pediátrica</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- ================================ CSS ================================ -->
+  <link rel="stylesheet" href="/css/home/pages/triagemCrianças.css">
+  <!-- ================================ JS ================================ -->
+  <script src="/js/home/pages/triagemCrianças.js" defer></script>
+  <!-- ================================ FONT AWESOME ================================ -->
+  <link rel="stylesheet" href="/frameworks/awesome/css/fontawesome.css">
+</head>
+
+<body>
+
+  <a href="/home/{{nutricionistas.id_nutri}}/pacientes/{{paciente.id_pacientes}}">
+    <div class="back">
+      <i class="fa-solid fa-arrow-left fa-2xl" style="color: #ffffff;"></i>
+    </div>
+  </a>
+
+  <div class="titles">
+    <h1>Triagem Pediátrica</h1>
+    <h3>Strong Kids- Crianças de 1 mês à 18 anos de idade</h3>
+    <p>Avalição Nutricional Subjetiva</p>
+  </div>
+  <div class="cabecalho">
+    <div class="date">
+      <label>Data:</label><br>
+      <input type="date" name="date" id="date"><br>
+    </div>
+    <div class="diagnostico">
+      <label>Diagnóstico:</label><br>
+      <input type="text" name="diagnostico" id="diagnostico">
+    </div>
+  </div>
+  <fieldset class="question">
+    <div class="pergunta">
+      <p>1. Avaliação nutricional subjetiva: a criança parece ter déficit nutricional ou desnutrição?</p>
+      <i class="fa-solid fa-circle-info" onclick="mostrarAjuda('ajuda-1')"></i><br>
+    </div>
+    <div id="ajuda-1" class="ajuda-conteudo">
+      <p>Exemplos: redução de gordura subcutânea e/ou massa muscular, face emagrecida, outro sinal.</p>
+    </div>
+    <div class="option">
+      <label>
+        <input type="radio" name="opcao1" value="1"> Sim
+      </label><br>
+      <label>
+        <input type="radio" name="opcao1" value="0"> Não
+      </label>
+    </div>
+  </fieldset>
+  <fieldset class="question">
+    <div class="pergunta">
+      <p>2. Doença (com alto risco nutricional) ou cirurgia de grande porte?</p>
+      <i class="fa-solid fa-circle-info" onclick="mostrarAjuda('ajuda-2')"></i><br>
+    </div>
+    <div id="ajuda-2" class="ajuda-conteudo">
+      <p>Exemplos: Anorexia nervosa, fibrose cística, AIDS, pancreatite, doença muscular, baixo peso para
+        idade/prematuridade (idade corrigida 6 meses), doença crônica (cardíaca, renal ou hepática),
+        displasia broncopulmonar (ate 2 meses), queimaduras, doença inflamatória intestinal, síndrome do
+        intestino curto, doença metabólica, doença celíaca, câncer, trauma, deficiência mental/paralisia
+        cerebral, pré ou pós-operatorio de cirurgia de grande porte, outra(classificada pelo médico ou
+        nutricionista)</p>
+    </div>
+    <div class="option">
+      <label>
+        <input type="radio" name="opcao2" value="1"> Sim
+      </label><br>
+      <label>
+        <input type="radio" name="opcao2" value="0"> Não
+      </label>
+    </div>
+  </fieldset>
+  <fieldset class="question">
+    <div class="pergunta">
+      <p>3. Ingestão nutricional e/ou perdas nos últimos dias?</p>
+      <i class="fa-solid fa-circle-info" onclick="mostrarAjuda('ajuda-3')"></i><br>
+    </div>
+    <div id="ajuda-3" class="ajuda-conteudo">
+      <p>Exemplos: diarreia (> 5x/dia), dificuldade de se alimentar devido à dor, vômitos (>3x/dia),
+        intervenção nutricional prévia, diminuição da ingestão alimentar (não considerar jejum para
+        procedimento ou cirurgia)</p>
+    </div>
+    <div class="option">
+      <label>
+        <input type="radio" name="opcao3" value="1"> Sim
+      </label><br>
+      <label>
+        <input type="radio" name="opcao3" value="0"> Não
+      </label>
+    </div>
+  </fieldset>
+  </fieldset>
+  <fieldset class="question">
+    <div class="pergunta">
+      <p>4. Refere perda de peso ou ganho insuficiente nas últimas semanas ou meses?</p>
+      <i class="fa-solid fa-circle-info" onclick="mostrarAjuda('ajuda-4')"></i><br>
+    </div>
+    <div id="ajuda-4" class="ajuda-conteudo">
+      <p>Exemplos: perda de peso (crianças >1 ano), não ganho de peso (<1 ano) </p>
+    </div>
+    <div class="option">
+      <label>
+        <input type="radio" name="opcao4" value="1"> Sim
+      </label><br>
+      <label>
+        <input type="radio" name="opcao4" value="0"> Não
+      </label>
+    </div>
+  </fieldset>
+  <div class="result">
+    <h3>Resultado da Triagem:</h3>
+
+    <div id="resultContainer">
+      <p id="riscoText"></p>
+      <p id="recomendacoes"></p>
+    </div>
+  </div>
+
+  <div class="btn">
+    <button type="submit" id="acao" onclick="mostrarResultado()">Enviar</button>
+    <button type="submit" id="limpar" onclick="limparCampos()">Limpar</button>
+  </div>
+
+</body>
+
+</html>

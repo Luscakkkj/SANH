@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Triagem Nutricional</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- ================================ CSS ================================ -->
+  <link rel="stylesheet" href="/css/home/pages/triagemAdultos.css">
+  <!-- ================================ JS ================================ -->
+  <script src="/js/home/pages/triagemAdultos.js" defer></script>
+  <!-- ================================ FONT AWESOME ================================ -->
+  <link rel="stylesheet" href="/frameworks/awesome/css/fontawesome.css">
+</head>
+
+<body>
+
+  <a href="/home/{{nutricionistas.id_nutri}}/pacientes/{{paciente.id_pacientes}}">
+    <div class="back">
+      <i class="fa-solid fa-arrow-left fa-2xl" style="color: #ffffff;"></i>
+    </div>
+  </a>
+
+
+  <div class="titles">
+    <h1>Triagem Nutricional</h1>
+    <h3>NRS - 2002 (Nutritional Risk Screening) - Adultos e idosos hospitalizados.</h3>
+    <p>Avaliação Nutricional Subjetiva</p>
+  </div>
+  <div class="cabecalho">
+    <div class="date">
+      <label>Data:</label><br>
+      <input type="date" name="date" id="date"><br>
+    </div>
+    <div class="diagnostico">
+      <label>Diagnóstico:</label><br>
+      <input type="text" name="diagnostico" id="diagnostico">
+    </div>
+  </div>
+  <fieldset class="question">
+    <div class="pergunta">
+      <p>1. O paciente é IMC, 20,5 kg/m2 ?</p>
+    </div>
+    <label>
+      <input type="radio" name="opcao1" value="sim"> Sim
+    </label>
+    <label>
+      <input type="radio" name="opcao1" value="nao"> Não
+    </label>
+  </fieldset>
+  <fieldset class="question">
+    <div class="pergunta">
+      <p>2. O paciente perdeu peso nos últimos meses ?</p>
+    </div>
+    <label>
+      <input type="radio" name="opcao2" value="sim"> Sim
+    </label>
+    <label>
+      <input type="radio" name="opcao2" value="nao"> Não
+    </label>
+  </fieldset>
+  <fieldset class="question">
+    <div class="pergunta">
+      <p>3.O paciente teve sua ingestão reduzida na última semana ?</p>
+    </div>
+    <label>
+      <input type="radio" name="opcao3" value="sim"> Sim
+    </label>
+    <label>
+      <input type="radio" name="opcao3" value="nao"> Não
+    </label>
+  </fieldset>
+  <fieldset class="question">
+    <div class="pergunta">
+      <p>4. O paciente é gravemente doente ?</p>
+    </div>
+    <label>
+      <input type="radio" name="opcao4" value="sim"> Sim
+    </label>
+    <label>
+      <input type="radio" name="opcao4" value="nao"> Não
+    </label>
+  </fieldset>
+
+  <div class="result">
+    <h3>Resultado do Questionário:</h3>
+    <div id="resultContainer">
+      <p id="riscoText"></p>
+      <p id="recomendacoes"></p>
+    </div>
+  </div>
+
+  <button type="button" class="acao">Calcular</button>
+
+  <!-- Segunda etapa -->
+  <div class="etapa" id="etapa2" style="display: none;">
+
+
+    <button type="submit" class="acao" id="calculaResultadoSegundaEtapa">Calcular</button>
+
+  </div>
+</body>
+
+
+</html>

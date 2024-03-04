@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>SANH</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- ================================ FONT AWESOME ================================ -->
+  <link rel="stylesheet" href="/frameworks/awesome/css/fontawesome.css">
+  <!-- ================================ CSS ================================ -->
+  <link rel="stylesheet" href="/css/home/home.css">
+  <link rel="stylesheet" href="/css/home/partials/dashboard.css">
+  <link rel="stylesheet" href="/css/home/partials/registro.css">
+  <link rel="stylesheet" href="/css/home/partials/pacientes.css">
+  <!-- ================================ JS ================================ -->
+  <script src="/js/home/home.js" defer></script>
+  <script src="/js/home/partials/registro.js" defer></script>
+  
+</head>
+
+<body>
+  <!-- ========================= Navegação ================================== -->
+  <div class="box">
+    <nav class="navigation">
+      <ul>
+        <li>
+          <a href="/home/{{nutricionistas.id_nutri}}">
+            <span class="icon"><i class="fa-solid fa-house"></i></span>
+            <span class="text">Início</span>
+          </a>
+        </li>
+        <li>
+          <a href="/home/{{nutricionistas.id_nutri}}/registro/" id="link-pacientes">
+            <span class="icon"><i class="fa-solid fa-users"></i></span>
+            <span class="text">Cadastrar Paciente</span>
+          </a>
+        </li>
+        <li>
+          <a href="/home/{{nutricionistas.id_nutri}}/pacientes/" id="link-consulta">
+            <span class="icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <span class="text">Meus Pacientes</span>
+          </a>
+        </li>
+        <li>
+          <a id="link-consulta" class="sair">
+            <span class="icon"><i class="fa-solid fa-right-to-bracket"></i></span>
+            <span class="text">Sair</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!-- ================================= Main ================================================== -->
+  <div class="toggle">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+
+  <div class="partial">
+    <div class="partial-content">
+      {{> (lookup . 'dynamicPartial')}}
+    </div>
+  </div>
+
+  <div class="delete-paciente">
+    <div class="aviso-content">
+      <h2>Confirmação de saída </h2>
+      <p>Tem certeza de que deseja sair dessa página ?</p>
+      <a href="/" class="btn btn-danger" id="confirm-delete">Sim, sair</a>
+      <span class="btn btn-secondary" id="cancel-delete">Cancelar</span>
+    </div>
+  </div>
+
+  <!-- ================================ JQUERY E MODULOS ================================ -->
+  <script src="/frameworks/jquery/jquery.min.js"></script>
+  <script src="/frameworks/jquery/modules/jquery.mask.min.js"></script>
+</body>
+
+</html>

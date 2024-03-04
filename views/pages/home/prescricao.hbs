@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Prescrição Nutricional</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<!-- ================================ JQUERY E MODULOS ================================ -->
+  	<script src="/frameworks/jquery/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>	
+	<!-- ================================ CSS ================================ -->
+	<link rel="stylesheet" type="text/css" href="/css/home/pages/prescricao.css">
+	<!-- ================================ FONT AWESOME ================================ -->
+	<link rel="stylesheet" href="/frameworks/awesome/css/fontawesome.css">
+
+</head>
+<body>
+
+	<a href="/home/{{nutricionistas.id_nutri}}/pacientes/{{paciente.id_pacientes}}">
+		<div class="back">
+			<i class="fa-solid fa-arrow-left fa-2xl" style="color: #ffffff;"></i>
+		</div>
+	</a>
+
+	{{#if erro}}
+    <div class="alert alert-error">
+      <div class="icon__wrapper"><i class="fa-regular fa-circle-xmark" style="color: #ff1414;"></i></div>
+      <span class="mdi mdi-alert-outline"></span>
+      <p>{{erro}}</p>
+    </div>
+	{{/if}}
+
+
+
+	{{#if sucesso}}
+    <div class="alert alert-success">
+      <div class="icon__wrapper "> <i class="fa-solid fa-check" style="color: #26a269;"></i></div>
+      <span class="mdi mdi-alert-outline"></span>
+      <p>{{sucesso}}</p>
+    </div>
+	{{/if}}
+
+	<h1>Prescrição Nutricional</h1>
+	<div class="dados">
+		<div class="nome">Nome: {{paciente.nome}}</div>
+		<div class="leito">Leito: {{paciente.DadosClinico.fk_pacientes}}</div>
+	</div>
+	<form action="/home/registro/{{paciente.id_pacientes}}/prescricao" method="post">
+		<label for="prescriptionDate">Data da Prescrição:</label>
+		<input type="date" id="prescriptionDate" name="data">
+
+		<label for="dietRecommendation">Recomendação de Dieta:</label>
+		<textarea id="dietRecommendation" name="dieta"></textarea>
+
+		<label for="supplements">Suplementos Recomendados:</label>
+		<textarea type="text" id="supplements" name="suplementos"></textarea>
+
+		<!-- Outros campos e anexos -->
+
+		<button type="button" id="downloadPDF">Baixar PDF</button>
+		<input type="submit" id="enviar" value="Enviar Prescrição">
+
+	</form>
+
+	<script>
+		setTimeout(function () {
+			const alert = document.querySelector(".alert")
+			if (alert) alert.remove()
+		}, 1300);
+
+		document.getElementById('downloadPDF').addEventListener('click', async function () {
+			// Oculta os botões antes de gerar o PDF
+			document.querySelector('#downloadPDF').style.display = 'none';
+			document.querySelector('#enviar').style.display = 'none';
+			document.body.style.backgroundColor = '#fff'
+
+			// Obtém o elemento <html> para converter a página inteira
+			var element = document.querySelector('html');
+
+			// Configurações para o tamanho do papel e orientação
+			var opt = {
+				margin: 10,
+				filename: 'prescricao_nutricional.pdf',
+				image: { type: 'jpeg', quality: 0.98 },
+				html2canvas: { scale: 4 },
+				jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+			};
+
+			try{
+				await html2pdf().from(element).set(opt).save();
+			} catch(erro){
+				console.log(erro)
+			}
+			
+
+			// Restaura a visibilidade dos botões após a conclusão da operação
+			document.querySelector('#downloadPDF').style.display = 'block';
+			document.querySelector('#enviar').style.display = 'block';
+			document.body.style.backgroundColor = 'none'
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<h1>Meus Pacientes</h1>
+
+<div id="search-box">
+  <input type="text" id="search" class="form-control" placeholder="Filtrar por Nome do Paciente">
+</div>
+
+<div class="container">
+
+  <table class="table table-bordered" id="pacientes-table">
+    <thead>
+      <tr>
+        <th>Leito</th>
+        <th>Nome do Paciente</th>
+        <th>Idade</th>
+        <th>Data de Admissão</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each pacientes}}
+      <tr>
+        <td>{{id_pacientes}}</td>
+        <td><a href="/home/{{../nutricionistas.id_nutri}}/pacientes/{{id_pacientes}}">{{nome}}</a></td>
+        <td>{{idade}}</td>
+        <td>{{DadosClinico.data}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
+<script>
+  // Função para filtrar a tabela
+  $(document).ready(function () {
+    $("#search").on("keyup", function () {
+      var value = $(this).val().toLowerCase();
+      $("#pacientes-table tbody tr").filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+    });
+  });
+</script>

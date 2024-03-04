@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #333;
+}
+
+:root {
+  --verde1: #67e7d5;
+  --verde2: #4dd4c3;
+  --verde3: #3ac2b1;
+  --verde4: #1aaf9e;
+  --verde5: #009c8c;
+}
+
+html,
+body {
+  height: auto;
+  min-height: 100vh;
+  background-color: #e6f6f0;
+}
+
+
+input:focus {
+  outline: none;
+}
+
+#register-container {
+  max-width: 900px;
+  min-height: 80vh;
+  margin: 2rem auto;
+  display: flex;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+#register-banner {
+  background: url("/img/cadastro/nutri.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+}
+
+#banner-layer {
+  background-color: rgba(26, 175, 158, 0.701);
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+#register-banner h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+#register-form {
+  background-color: #fdfdfd;
+  padding: 2rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+#register-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  color: var(--verde4);
+}
+
+#register-form p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control label {
+  font-weight: bold;
+  margin-bottom: 0.6rem;
+  color: var(--verde5);
+}
+
+.form-control input {
+  border: none;
+  border-bottom: 1px solid #aaa;
+  padding: 0.6rem 0;
+}
+
+#register-form #generated-password {
+  border: 1px solid var(--verde4);
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.4rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+#generate-password {
+  color: var(--verde4);
+  font-weight: 600;
+  transition: .4s;
+}
+
+#generate-password:hover {
+  color: var(--verde3);
+}
+
+#register-form #generated-password p {
+  color: var(--verde4);
+  margin-bottom: 0.5rem;
+}
+
+#register-form input[type="submit"],
+#copy-password {
+  background-color: var(--verde4);
+  color: #fff;
+  opacity: 0.8;
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem 1.4rem;
+  max-width: 150px;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: 0.4s;
+  font-weight: bold;
+  font-size: .8rem;
+  display: none;
+}
+
+#register-form input[type="submit"]:hover {
+  opacity: 1;
+}
+
+#copy-password {
+  margin: 1rem auto;
+  background-color: transparent;
+  border: 2px solid var(--verde4);
+  color: var(--verde4);
+  padding: 0.5rem 1rem;
+}
+
+.span-required {
+  color: #e63636;
+  font-weight: 400;
+  font-size: 14px;
+  display: none;
+}
+
+#icone {
+  color: #e63636;
+  margin-top: 5px;
+  margin-right: 15px;
+  display: none;
+}
+
+.alert-div {
+  margin: 0px;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 11;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  #register-banner {
+      display: none;
+  }
+
+  #register-form {
+      width: 100%;
+      height: 100vh;
+  }
+
+  #register-container {
+      margin: 0;
+      height: auto;
+  }
+
+  #register-form {
+      height: 100vh;
+  }
+
+  #copy-password {
+      display: none;
+  }
+}

@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/*cores como variaveis*/
+:root {
+    --verde1: #67E7D5;
+    --verde2: #4DD4C3;
+    --verde3: #34C2B1;
+    --verde4: #1AAF9E;
+    --verde5: #009C8C;
+    --success: #30cd6c;
+    --error: #ff676a;
+}
+
+body {
+    overflow: hidden;
+}
+
+.main-login {
+    width: 100vw;
+    height: 100vh;
+    background: #a8c1c1de;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.left-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.left-login>h1 {
+    font-size: 3vw;
+    color: var(--verde5);
+    position: absolute;
+    bottom: 0;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.left-login-img {
+    width: 40vw;
+    height: 50vw;
+
+}
+
+.right-login {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    width: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background-color: var(--verde5);
+    border-radius: 20px;
+    box-shadow: 0px 5px 20px var(--verde1);
+}
+
+.card-login>h1 {
+    color: #81ffee;
+    font-weight: 800;
+    margin: 15px 0;
+    font-size: 2, 9rem;
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield>input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: var(--verde3);
+    color: #f0ffffde;
+    font-size: 12pt;
+    box-shadow: 0px 5px 10px #00000056;
+    outline: none;
+    box-sizing: border-box
+}
+
+.textfield>label {
+    color: #f0ffffde;
+    margin-bottom: 10px;
+}
+
+.textfield>input::placeholder {
+    color: #f0ffff94;
+
+}
+
+.btn-login {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #000000;
+    background: var(--verde1);
+    cursor: pointer;
+    box-shadow: 0px 10px 40px #00ff8052;
+    position: relative;
+    left: -20px;
+}
+
+button:hover {
+    background-color: #00ff8052;
+    cursor: pointer;
+}
+
+.alert {
+    position: relative;
+    min-height: 50px;
+    min-width: 300px;
+    border-radius: 12px;
+    padding: 16px 22px 17px 20px;
+    display: flex;
+    font-weight: bolder;
+    align-items: center;
+    margin: 10px auto;
+    align-items: center;
+    top: -250px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.alert-success {
+    background: var(--success);
+}
+
+.alert-error {
+    background: var(--error);
+}
+
+.alert .icon__wrapper {
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.253);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert .icon__wrapper span {
+    font-size: 21px;
+    color: #fff;
+}
+
+.alert p {
+    color: #fff;
+    margin-left: 10px;
+}
+
+
+
+/*deixando responsivo*/
+
+@media only screen and (max-width:950px) {
+    .card-login {
+        width: 60%;
+    }
+    .alert{
+        z-index: 100;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .main-login {
+        flex-direction: column;
+    }
+
+    .left-login>h1 {
+        display: none;
+    }
+
+    .left-login {
+        width: 100%;
+        height: auto;
+    }
+
+    .right-login {
+        width: 100%;
+        height: auto;
+    }
+
+    .left-login-image {
+        width: 50vw;
+    }
+
+    .card-login {
+        width: 70%;
+    }
+
+    .circle {
+        display: none;
+    }
+
+    .img-login {
+        display: none;
+    }
+
+    .alert{
+        z-index: 100;
+        height: 5rem;
+        width: 20rem;
+        left: 2px;
+        top: 0px;
+    }
+
+}
+
+.circle {
+    position: absolute;
+    bottom: 100%;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
+    background: var(--verde5);
+
+    clip-path: circle(55% at bottom left);
+
+    /*
+   clip-path: polygon(0 99%, 0 0, 100% 100%);
+    */
+}
+
+.box-img {
+    position: absolute;
+    right: 65%;
+    bottom: -40px;
+
+}
+
+.img-login {
+    position: relative;
+    height: 90vh;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    z-index: 100;
+}

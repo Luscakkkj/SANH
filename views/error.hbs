@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Página Não encontrada</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+			text-decoration: none;
+			list-style: none;
+		}
+
+		body {
+			background: #67e7d5;
+			overflow: hidden;
+		}
+
+		.main {
+			overflow: hidden;
+		}
+
+		.section {
+			padding: 8rem;
+			height: 100vh;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.left {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.left p {
+			font-size: 3rem;
+			color: #fff;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+
+		.left h4 {
+			font-size: 3.5rem;
+			color: #009c8c;
+			margin-bottom: 3rem;
+		}
+
+		.btn {
+			padding: 1.5rem 5rem;
+			background: #009c8c;
+			border-radius: 15px;
+			color: #fff;
+			font-size: 1.4rem;
+			font-weight: bold;
+			transition: all 0.3s ease;
+		}
+
+		.btn:hover {
+			box-shadow: 0 1px 4px #00665c;
+		}
+
+		.right img {
+			width: 550px;
+			margin-bottom: .2rem;
+			animation: float 1.8s infinite alternate;
+		}
+
+		.shadow {
+			width: 450px;
+			height: 45px;
+			background: hsla(38, 21%, 19%, .16);
+			border-radius: 50%;
+			margin: 0 auto;
+			filter: blur(5px);
+			animation: shadow 1.8s infinite alternate;
+		}
+
+		span .caractere {
+			display: none;
+		}
+
+		@keyframes float {
+			0% {
+				transform: translateY(0);
+			}
+
+			100% {
+				transform: translateY(15px);
+			}
+		}
+
+		@keyframes shadow {
+			0% {
+				transform: scale(1.1);
+			}
+
+			100% {
+				transform: scale(.85, .85);
+			}
+		}
+
+		/*RESPONSIVIDADE*/
+		@media (max-width:768px) {
+
+			.section {
+				padding: 2rem;
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.left {
+				width: 100%;
+			}
+
+			.left p {
+				max-width: 384px;
+				text-align: center;
+				color: #fff;
+				margin-bottom: 15px;
+				font-weight: bold;
+				font-size: 2.5rem;
+			}
+
+			img {
+				display: none;
+			}
+
+			span .caractere {
+				display: inline-block;
+				font-weight: bold;
+				font-size: 4rem;
+				line-height: 40px;
+
+			}
+
+
+			.shadow {
+				display: none;
+			}
+
+			.left h4 {
+				text-align: left;
+				font-size: 3rem;
+			}
+
+			.btn {
+				padding: 1.5rem 5rem;
+				background: #009c8c;
+				border-radius: 15px;
+				color: #fff;
+				font-size: 1.4rem;
+				font-weight: bold;
+				transition: 0.4s;
+				margin: 0 auto;
+			}
+
+		}
+	</style>
+
+	<main class="main">
+		<section class="section">
+			<div class="left">
+				<p>Erro 404</p>
+				<h4>Oops, página não encontrada <span>
+						<p class="caractere">:(</p>
+					</span></h4>
+				<a href="/" class="btn">Voltar</a>
+			</div>
+			<div class="right">
+				<img src="/img/404/maça.png" alt="maça chorando com raiva ">
+				<div class="shadow"></div>
+			</div>
+		</section>
+	</main>
+	<script>
+		document.querySelector('.btn').addEventListener("click", function () {
+			window.history.back()
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+:root{
+	--success: #30cd6c;
+    --error: #ff676a;
+}
+
+.leito {
+	display: none;
+}
+
+.back{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position:  fixed;
+	left: 20px;
+	top: 20px;
+    height: 3rem;
+    width: 3rem;
+	background-color: #00ae9d;
+	border-radius: 50%;
+	border: 4px solid #006c61;
+	z-index: 100;
+}
+
+.back:hover{
+	background-color: #43dbca;
+	cursor: pointer;
+}
+
+#botoes {
+	width: 60%;
+	border: 1.2px solid #1f1f1f;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.container h1 {
+	margin-top: 50px;
+	font-weight: 700;
+	color: #00ae9d;
+	font-size: 2.5rem;
+}
+
+.container p {
+	margin-top: 5px;
+	text-align: center;
+	color: #006c61;
+	font-size: 1.1rem;
+}
+
+#texto {
+	border-radius: 10px;
+	width: 70%;
+	height: 350px;
+	resize: none;
+	margin-bottom: 20px;
+	padding: 15px;
+	border: 0.8px solid #222;
+}
+
+
+.btn {
+	border: 0;
+}
+
+.bi {
+	font-size: 18px;
+	font-weight: bolder;
+}
+
+#negrito,
+#italico,
+#sublinhado {
+	border: 1px solid #222;
+	cursor: pointer;
+	transition: all .4s;
+
+}
+
+#negrito:hover {
+	background-color: #00ae9dc8;
+	color: #fff;
+}
+
+#italico:hover {
+	background-color: #00ae9dc8;
+	color: #fff;
+}
+
+#sublinhado:hover {
+	background-color: #00ae9dc8;
+	color: #fff;
+}
+
+.enviar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.acao {
+	width: 100px;
+	background-color: #009c8c;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 800;
+	text-transform: uppercase;
+	padding: 15px;
+	width: 150px;
+	border: 0;
+	margin-bottom: 14px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: .4s;
+}
+
+#pdf {
+	margin-left: 20px;
+}
+
+.acao:hover {
+	background-color: #1aaf9e;
+}
+
+#esquerda,
+#direita,
+#centro,
+#justificado {
+	border: 1px solid #222;
+	cursor: pointer;
+	transition: all .4s;
+}
+
+#esquerda:hover {
+	background-color: #00ae9dc8;
+	color: #fff;
+}
+
+#direita:hover {
+	background-color: #00ae9dc8;
+	color: #fff;
+}
+
+#centro:hover {
+	background-color: #00ae9dc8;
+	color: #fff;
+}
+
+#justificado:hover {
+	background-color: #00ae9dc8;
+	color: #fff;
+}
+
+#maiuscula,
+#minuscula,
+#maiMin {
+	border: 1px solid #222;
+	font-weight: 500;
+	cursor: pointer;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 18px;
+}
+
+#minuscula:hover {
+	background-color: #00ae9dc8;
+	color: #fff;
+}
+
+#maiuscula:hover {
+	background-color: #00ae9dc8;
+	color: #fff;
+}
+
+#maiMin:hover {
+	background-color: #00ae9dc8;
+	color: #fff;
+}
+
+#limpar {
+	border: 1px solid #222;
+	cursor: pointer;
+}
+
+#limpar:hover {
+	background-color: #00ae9dc8;
+	color: #fff;
+
+}
+
+@media(width < 920px) {
+	#botoes {
+		min-width: 92%;
+		margin-top: 5px;
+	}
+
+	.btn {
+		margin-bottom: 2px;
+		margin-top: 5px;
+	}
+
+	#texto {
+		width: 100%;
+	}
+
+
+	.container h1 {
+		text-align: center;
+		margin-top: 50px;
+	}
+}
+
+.alert {
+	min-height: 67px;
+	width: 560px;
+	border-radius: 12px;
+	padding: 16px 22px 17px 20px;
+	display: flex;
+	font-weight: bolder;
+	align-items: center;
+	margin: 10px auto;
+	align-items: center;
+}
+
+.alert-success {
+	background: var(--success);
+}
+
+.alert-error {
+	background: var(--error);
+}
+
+.alert .icon__wrapper {
+	height: 34px;
+	width: 34px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.253);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.alert .icon__wrapper span {
+	font-size: 21px;
+	color: #fff;
+}
+
+.alert p {
+	color: #fff;
+	margin-left: 10px;
+}

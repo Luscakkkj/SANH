@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicion.ico" type="image/x-icon">
+  <!-- ================================ CSS ================================ -->
+  <link rel="stylesheet" href="/css/auth/login.css">
+  <!-- ================================ FONT AWESOME ================================ -->
+  <link rel="stylesheet" href="/frameworks/awesome/css/fontawesome.css">
+  <!-- ================================ BOOTSTRAP ================================ -->
+  <script src="/frameworks/bootstrap.bundle.js" defer></script>
+</head>
+
+<body>
+  <!-- circulo azul -->
+  <section>
+    <div class="circle"></div>
+  </section>
+
+  <!-- imagem -->
+  <div class="box-img">
+    <img src="/img/login/gata2.png" alt="nutricionista" class="img-login">
+  </div>
+  <!-- div de todo o projeto -->
+  <form action="/login" method="post">
+    <div class="main-login">
+      {{#if erro}}
+      <div class="alert alert-error">
+        <div class="icon__wrapper"><i class="fa-regular fa-circle-xmark" style="color: #ff1414;"></i></div>
+        <span class="mdi mdi-alert-outline"></span>
+        <p>{{erro}}</p>
+      </div>
+      {{/if}}
+
+      {{#if sucesso}}
+      <div class="alert alert-success">
+        <div class="icon__wrapper "> <i class="fa-solid fa-check" style="color: #26a269;"></i></div>
+        <span class="mdi mdi-alert-outline"></span>
+        <p>{{sucesso}}</p>
+      </div>
+      {{/if}}
+
+      <!-- div da parte esquerda do projeto -->
+      <div class="left-login">
+
+        <h1> <br>Faça Login <br> com os dados cadastrados</h1>
+      </div>
+
+      <!-- div da parte direita do projeto -->
+      <div class="right-login">
+
+        <!-- div das informações do login(email, senha e o botão) -->
+        <div class="card-login">
+          <img src="/img/login/logo.png" alt="logo" class="logo">
+          <h1>SANH</h1>
+
+          <div class="textfield">
+            <label for="crn">CRN</label>
+            <input type="text" name="crn" id="crn" value="{{formData.crn}}" placeholder="digite seu E-mail"
+              class="input">
+          </div>
+
+          <div class="textfield">
+            <label for="Senha">Senha</label>
+            <input type="password" name="senha" id="password" placeholder="Digite sua senha" class="input">
+          </div>
+
+          <div>
+            <button class="btn-login" type="submit">Login</button>
+          </div>
+        </div>
+  </form>
+
+  <script>
+    setTimeout( _ => {
+      const alert = document.querySelector(".alert")
+      if (alert) alert.parentNode.removeChild(alert)
+    }, 1300);
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Minha Tela</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- ================================ BOOTSTRAP ================================ -->
+  <link rel="stylesheet" href="/frameworks/bootstrap/bootstrap.css">
+  <script src="/frameworks/bootstrap/bootstrap.bundle.js"></script>
+  <!-- ================================ FONT AWESOME ================================ -->
+  <link rel="stylesheet" href="/frameworks/awesome/css/fontawesome.css">
+  <!-- ================================ CSS ================================ -->
+  <link rel="stylesheet" href="/css/home/pages/perfil.css">
+</head>
+
+<body>
+
+  <a href="/home/{{nutricionistas.id_nutri}}/pacientes/{{id_pacientes}}">
+    <div class="back">
+      <i class="fa-solid fa-arrow-left fa-2xl" style="color: #ffffff;"></i>
+    </div>
+  </a>
+
+  <div class="container">
+    <!-- Cabeçalho -->
+    <header class="my-4">
+      <div class="user-profile">
+        <div class="icones">
+          <div class="excluir">
+            <i class="fa-solid fa-trash fa-xl" style="color: #ffffff;"></i>
+          </div>
+
+          <div class="prescricao">
+            <a href="/home/{{nutricionistas.id_nutri}}/pacientes/{{paciente.id_pacientes}}/prescricoes">
+              <i class="fa-solid fa-pills fa-xl" style="color: #ffffff;"></i>
+            </a>
+          </div>
+
+          <div class="evolucao">
+            <a href="/home/{{nutricionistas.id_nutri}}/pacientes/{{paciente.id_pacientes}}/evolucoes">
+              <i class="fa-solid fa-book-open-reader fa-xl" style="color: #ffffff;"> </i>
+            </a>
+
+          </div>
+        </div>
+        {{#if paciente.foto}}
+        <div class="user-initial"><img src="/img/perfil/{{paciente.foto}}" alt=""></div>
+        {{/if}}
+        <div style="position: relative; right:5rem;">
+          <h1>{{paciente.nome}}</h1>
+          <p>Idade: {{paciente.idade}} anos</p>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Container com botões -->
+    <div class="btn-container">
+      <a href="/home/{{nutricionistas.id_nutri}}/pacientes/{{paciente.id_pacientes}}/evolucao"><button
+          class="btn btn-primary mx-2">Evolução
+          Nutricional</button></a>
+      <a href="/home/{{nutricionistas.id_nutri}}/pacientes/{{paciente.id_pacientes}}/prescricao"><button
+          class="btn btn-primary mx-2">Prescrição
+          Nutricional</button></a>
+      <a href="/home/{{nutricionistas.id_nutri}}/pacientes/{{paciente.id_pacientes}}/triagem"><button
+          class="btn btn-primary mx-2">Triagem
+          Nutricional</button></a>
+    </div>
+
+    <!-- Containers de Informações -->
+    {{#if paciente.DadosAntropometrico.peso_estimado}}
+    <div class="row">
+      <div class="col-md-4">
+        <div class="info-container">
+          <div class="info-title">Peso Estimado</div>
+          <p>{{paciente.DadosAntropometrico.peso_estimado}} kg</p>
+        </div>
+      </div>
+      {{else}}
+      <div class="row">
+        <div class="col-md-4">
+          <div class="info-container">
+            <div class="info-title">Peso</div>
+            <p>{{paciente.DadosAntropometrico.peso}} kg</p>
+          </div>
+        </div>
+        {{/if}}
+
+        {{#if paciente.DadosAntropometrico.altura_estimada}}
+        <div class="col-md-4">
+          <div class="info-container">
+            <div class="info-title">Altura Estimada</div>
+            <p>{{paciente.DadosAntropometrico.altura_estimada}} m</p>
+          </div>
+        </div>
+        {{else}}
+        <div class="col-md-4">
+          <div class="info-container">
+            <div class="info-title">Altura</div>
+            <p>{{paciente.DadosAntropometrico.altura}}m</p>
+          </div>
+        </div>
+        {{/if}}
+
+        <div class="col-md-4">
+          <div class="info-container">
+            <div class="info-title">IMC</div>
+            <p>{{paciente.DadosAntropometrico.imc}} kg/m²</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="info-container">
+            <div class="info-title">Peso Ideal</div>
+            <p>{{paciente.DadosAntropometrico.peso_ideal}} kg</p>
+          </div>
+        </div>
+      </div>
+      <!-- Conteúdo da página pode ser adicionado aqui -->
+      <div class="delete-paciente">
+        <div class="aviso-content">
+          <form action="/delete/{{nutricionistas.id_nutri}}/registro/{{paciente.id_pacientes}}" method="post">
+            <h2>Confirmação de Exclusão</h2>
+            <p>Tem certeza de que deseja excluir este paciente?</p>
+            <button class="btn btn-danger" id="confirm-delete">Sim, Excluir</button>
+            <button class="btn btn-secondary" type="button" id="cancel-delete">Cancelar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="/js/home/pages/perfil.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Cadastro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- ================================ CSS ================================ -->
+  <link rel="stylesheet" href="/frameworks/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="/css/auth/cadastro.css">
+  <!-- ================================ JS ================================ -->
+  <script src="/js/auth/cadastro.js" defer></script>
+  <!-- ================================ FONT AWESOME ================================ -->
+  <link rel="stylesheet" href="/frameworks/awesome/css/fontawesome.css">
+</head>
+
+<body>
+  
+	<div class="alert-div">
+      {{#if erro}}
+      <div class="alert alert-danger" role="alert">
+        {{erro}}
+      </div>
+      {{/if}}
+	</div>
+
+  <div id="register-container">
+    <div id="register-banner">
+      <div id="banner-layer">
+        <h1>Seja <br> bem-vindo</h1>
+      </div>
+    </div>
+
+    <!-- ================================ FORMULÁRIO ================================ -->
+
+    <form id="register-form" action="/cadastro" method="POST">
+      <h2>Crie sua conta:</h2>
+      <p>Registre-se e faça parte do nosso time</p>
+
+      <div class="form-control">
+        <label for="name">Nome:</label>
+        <input type="text" name="nome" id="name" value="{{formData.nome}}" placeholder="Digite seu nome" class="require" oninput="nameValidate()">
+        <i class="fa-solid fa-circle-exclamation" id="icone"><span class="span-required">O nome deve ter no mínimo
+            3 caracteres</span></i>
+      </div>
+
+      <div class="form-control">
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" value="{{formData.email}}" placeholder="Digite seu email" class="require"
+          oninput="emailValidate()">
+        <i class="fa-solid fa-circle-exclamation" id="icone"><span class="span-required">Digite um email
+            válido</span></i>
+      </div>
+
+      <div class="form-control">
+        <label for="crn">CRN:</label>
+        <input type="text" name="crn" id="crn" value="{{formData.crn}}" placeholder="Digite sua CRN" oninput="crnValidate()" class="require">
+        <i class="fa-solid fa-circle-exclamation" id="icone"><span class="span-required">Digite no mínimo 4
+            caracteres</span></i>
+      </div>
+
+      <div class="form-control">
+        <label for="password">Senha:</label>
+        <input type="password" name="senha" id="password" placeholder="Digite sua senha" class="require"
+          oninput="principalPassword()">
+        <i class="fa-solid fa-circle-exclamation" id="icone"><span class="span-required">A senha deve ter no
+            mínimo 10 caracteres</span></i>
+      </div>
+
+      <p>Sugerir senha segura? <span id="generate-password">Clique aqui</span></p>
+
+      <div id="generated-password">
+        <p>Aqui está a sua senha:</p>
+        <h4></h4>
+        <button id="copy-password">Copiar</button>
+      </div>
+
+      <div class="form-control">
+        <label for="confirmpassword">Confirmação da senha:</label>
+        <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirme a sua senha"
+          oninput="comparePassword()" class="require">
+        <i class="fa-solid fa-circle-exclamation" id="icone"><span class="span-required">As senhas devem ser
+            compatíveis</span></i>
+      </div>
+
+      <!-- ENVIAR -->
+      <input type="submit" id="enviar" value="Cadastrar">
+    </form>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+/* Estilizando o título "Meus Pacientes" */
+h1 {
+    text-align: center; /* Centraliza o título horizontalmente */
+    color: #009c8c; /* Define a cor especificada --verde5 ou #009c8c */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+/* Estilizando o campo de pesquisa */
+#search-box {
+    text-align: center; /* Centraliza horizontalmente o campo de pesquisa */
+    margin: auto;
+    margin-bottom: 20px;
+    border: 1px solid rgba(90, 90, 90, 0.8);
+    border-radius: 5px;
+    width: 80%;
+    padding: 5px;
+}
+
+#search-box input {
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Estilizando a tabela */
+#pacientes-table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    max-width: 80%; /* Aumentando a largura da tabela para 80% da largura máxima da tela */
+    width: 100%;
+    border: 1px solid rgba(90, 90, 90, 0.8);
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+/* Estilizando as células do cabeçalho da tabela (cabeçalhos de coluna) */
+#pacientes-table th {
+    background-color: #009c8c; /* Define a cor de fundo para os cabeçalhos de coluna */
+    color: #fff; /* Define a cor do texto nos cabeçalhos de coluna */
+    border: none; /* Remove as bordas das células do cabeçalho */
+    padding: 8px;
+    text-align: center;
+}
+
+/* Estilizando as células de dados da tabela */
+#pacientes-table td {
+    border: 1px solid rgba(90, 90, 90, 0.8);
+    padding: 8px;
+    text-align: center;
+}
+
+/* Centralizando na página */
+.container {
+    display: flex;
+    align-items: center;
+}
+
+/* Outras estilizações */
+tr, td, a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.4s;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #009c8c;
+    font-weight: 500;
+}

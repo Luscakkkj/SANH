@@ -1,0 +1,99 @@
+<div class="cardBox">
+  <div class="card">
+    <div>
+      {{#if contagem_pacientes}}
+      <div class="numbers">{{contagem_pacientes}}</div>
+      {{else}}
+      <div class="numbers">0</div>
+      {{/if}}
+      <div class="cardName">Número de Pacientes</div>
+    </div>
+
+    <div class="iconBox">
+      <i class="fa-solid fa-user"></i>
+    </div>
+  </div>
+  <div class="card">
+    <div>
+      <div class="cardName">Estatísticas da Semana</div>
+      {{#if contagem_pacientes}}
+      <div class="numbersSmall">{{contagem_prescricao}} de {{contagem_pacientes}} </div>
+      <label>Prescrições registradas</label>
+      {{else}}
+      <div class="numbersSmall">0 de 0</div>
+      <label>Nenhuma consulta realizada</label>
+      {{/if}}
+    </div>
+    <div class="iconBox">
+      <i class="fa-solid fa-chart-column"></i>
+    </div>
+  </div>
+</div>
+<!-- ========================== Ultimas Consultas ========================= -->
+<div class="detalhes">
+  <div class="recentConsultas">
+    <div class="cardHeader">
+      <h2>Últimas Consultas</h2>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <td>Nome</td>
+          <td>Dia</td>
+          <td>Status</td>
+        </tr>
+      </thead>
+      <tbody>
+        {{#if pacientes}}
+          {{#each pacientes}}
+              <tr>
+                <td>{{nome}}</td>
+                <td>{{DadosClinico.data}}</td>
+
+                {{#compare DadosAntropometrico.situacao "SOBREPESO"}}
+                  <td><span class="sobrepeso magreza">{{DadosAntropometrico.situacao}}</span></td>
+                {{/compare}}
+
+                {{#compare DadosAntropometrico.situacao "EUTROFIA"}}
+                  <td><span class="normalidade">{{DadosAntropometrico.situacao}}</span></td>
+                {{/compare}}
+
+                {{#compare DadosAntropometrico.situacao "MAGREZA"}}
+                  <td><span class="sobrepeso magreza">{{DadosAntropometrico.situacao}}</span></td>
+                {{/compare}}
+              </tr>
+            {{/each}}
+        {{else}}
+          <tr>
+            <td>Paciente Modelo</td>
+            <td>Segunda</td>
+            <td><span class="ativo">Ativo</span></td>
+          </tr>
+        {{/if}}
+      </tbody>
+    </table>
+  </div>
+  <!-- ========================== ULTIMOS PACIENTES =================================== -->
+  <div class="recentPacientes">
+    <div class="cardHeader">
+      <h2>Últimos Pacientes</h2>
+    </div>
+
+    <table>
+      {{#if pacientes}}
+        {{#each pacientes}}
+          <tr>
+          {{#if pacientes.foto}}
+            <td width="60px">
+              <div class="imgBox"><img src="/img/perfil/{{foto}}" alt=""></div>
+            </td>
+          {{/if}}
+            <td>
+              <h4>{{nome}}</h4>
+            </td>
+          </tr>
+        {{/each}}
+      {{/if}}
+    </table>
+  </div>
+</div>

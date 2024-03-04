@@ -1,0 +1,253 @@
+body {
+    background-color: #f2f2f2;
+}
+
+.cardBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+}
+
+.cardBox .card{
+    position: relative;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow:  0 7px 25px rgba(0, 0, 0, 0.181);
+}
+
+.cardBox .card .numbers{
+    position: relative;
+    font-weight: 500;
+    font-size: 4.2rem;
+    color: var(--verde4);
+}
+
+.cardBox .cardName{
+    color: var(--black);
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.cardBox .card .numbersSmall{
+    margin-top: 5px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--black);
+}
+.cardBox .card label{
+    color: var(--black);
+    font-size: 0.85rem;
+    margin-top: 2px;
+}
+
+.cardBox .card .destaque{
+    font-weight: 500;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: var(--black);
+}
+
+.cardBox .card .iconBox{
+    font-size: 4.2rem;
+    color: var(--verde3);
+    margin-top: 15px;
+}
+
+.cardBox .card:hover{
+    background: var(--verde4);
+}
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .numbersSmall,
+.cardBox .card:hover .destaque,
+.cardBox .card:hover label,
+.cardBox .card:hover .iconBox {
+    color: var(--white);
+}
+
+.detalhes{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 10px;
+}
+
+.detalhes .recentConsultas{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow:  0 7px 25px rgba(0, 0, 0, 0.181);
+    border-radius: 20px;
+}
+
+.cardHeader h2{
+    font-weight: 600;
+    color: var(--verde4);
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.detalhes table{
+    top: 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.detalhes table thead td{
+    font-weight: 700;
+}
+
+.detalhes table td{
+    padding: 20px;
+}
+
+.detalhes .recentConsultas table tr{
+    color: var(--black);
+    border-bottom:  1px solid #ccc ;
+
+}
+.detalhes .recentConsultas table tr:last-child{
+    border-bottom: none;
+}
+
+.detalhes .recentConsultas table tbody tr:hover{
+    background: var(--verde5);
+    color: var(--white);
+}
+
+.detalhes .recentConsultas table tr td{
+    padding: 10px;
+}
+
+.detalhes .recentConsultas table tr td:last-child{
+    text-align: end;
+}
+
+.normalidade{
+    padding: 2px 4px;
+    background-color: #8de02c;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sobrepeso.magreza{
+    padding: 2px 4px;
+    background-color: #f00;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.recentPacientes{
+    position: relative;
+    display: grid;
+    margin-left: 30px;
+    min-height: 500px;
+    padding: 20px;
+    background: var(--white);
+    box-shadow:  0 7px 25px rgba(0, 0, 0, 0.181);
+    border-radius: 20px;
+}
+
+.recentPacientes .imgBox{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.recentPacientes .imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.recentPacientes table tr:hover{
+    background-color: var(--verde4);
+    color: var(--white);
+}
+
+.recentPacientes table tr td{
+    padding: 12px 10px;
+}
+
+.recentPacientes table tr td h4{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2rem;
+}
+
+@media(max-width: 991px){
+    .cardBox{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .recentPacientes{
+        position: relative;
+        display: grid;
+        margin-left: 0px;
+        min-height: 502px;
+        padding: 24px;
+        background: var(--white);
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.181);
+        border-radius: 20px;
+        top: 10px;
+        left: 0.5rem;
+    }
+}
+
+@media (max-width:768px){
+    .detalhes{
+        grid-template-columns: 1fr ;
+    }
+    .recentConsultas{
+        overflow-x: auto;
+    }
+}
+
+@media (max-width:480px){
+    .cardBox{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .cardHeader h2{
+        font-size: 20px;
+    }
+
+    .partial{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .recentPacientes{
+        position: relative;
+        display: grid;
+        margin-left: -14px;
+        min-height: 502px;
+        padding: 24px;
+        background: var(--white);
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.181);
+        border-radius: 20px;
+        top: 10px;
+    }
+}

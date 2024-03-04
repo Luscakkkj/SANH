@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Evolução Nutricional</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- ================================ FONT AWESOME ================================ -->
+  <link rel="stylesheet" href="/frameworks/awesome/css/fontawesome.css">
+  <!-- ================================ BOOTSTRAP E MODULOS ================================ -->
+  <link rel="stylesheet" href="/frameworks/bootstrap/bootstrap.css">
+  <!-- ================================ CSS ================================ -->
+  <link rel="stylesheet" href="/css/home/pages/evolucao.css">
+  <!-- ================================ JS ================================ -->
+  <script src="/js/home/pages/evolucao.js" defer></script>
+  <!-- ================================ MODULO DE DATA E PDF ================================ -->
+  <script src="/frameworks/moment.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+  <a href="/home/{{nutricionistas.id_nutri}}/pacientes/{{paciente.id_pacientes}}">
+    <div class="back">
+      <i class="fa-solid fa-arrow-left fa-2xl" style="color: #ffffff;"></i>
+    </div>
+  </a>
+
+
+  {{#if erro}}
+  <div class="alert alert-error">
+    <div class="icon__wrapper"><i class="fa-regular fa-circle-xmark" style="color: #ff1414;"></i></div>
+    <span class="mdi mdi-alert-outline"></span>
+    <p>{{erro}}</p>
+  </div>
+  {{/if}}
+
+
+
+  {{#if sucesso}}
+  <div class="alert alert-success">
+    <div class="icon__wrapper "> <i class="fa-solid fa-check" style="color: #26a269;"></i></div>
+    <span class="mdi mdi-alert-outline"></span>
+    <p>{{sucesso}}</p>
+  </div>
+  {{/if}}
+
+
+  <div class="leito">{{paciente.id_pacientes}}</div>
+
+  <div class="container d-flex justify-content-center">
+    <h1>Evolução Nutricional</h1>
+  </div>
+  <div class="container d-flex justify-content-center">
+    <p>Informe a Evolução Nutricional do seu paciente editando o texto abaixo:</p>
+  </div>
+  
+  <form action="/home/registro/{{paciente.id_pacientes}}/evolucao" method="POST">
+    <div class="container d-flex justify-content-center" id="campoDeTexto">
+      <textarea id="texto" placeholder="Esse é um texto inicial onde o usuário possa digitar"
+        name="texto">{{texto}}</textarea>
+    </div>
+    <div class="enviar">
+      <button type="submit" class="acao enviar" id="enviar">Salvar</button>
+      <button type="button" class="acao enviar" id="pdf">Baixar PDF</button>
+    </div>
+  </form>
+
+  <!-- Bootstrap js -->
+  <script src="/frameworks/bootstrap/bootstrap.bundle.js"></script>
+
+</body>
+
+</html>

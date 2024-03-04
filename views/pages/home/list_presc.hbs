@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listagem de Prescrição</title>
+  <link rel="stylesheet" href="/frameworks/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="/frameworks/awesome/css/fontawesome.css">
+  <link rel="stylesheet" href="/css/home/pages/listagem_presc.css">
+  <script src="/frameworks/moment.js"></script>
+  <script src="/frameworks/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <header class="text-white text-center py-4">
+    <a href="/home/{{nutricionistas.id_nutri}}/pacientes/{{pacientes.id_pacientes}}" id="voltar">
+      <div class="voltar">
+        <i class="fa-solid fa-arrow-left fa-2xl" style="color: #ffffff;"></i>
+      </div>
+    </a>
+    <h1>Prescrições Médicas</h1>
+  </header>
+
+  <div id="search-box">
+    <label>Selecione uma data: </label>
+    <input type="date" id="search" class="form-control" placeholder="Selecione uma data">
+  </div>
+
+  {{#if prescricoes}}
+  <main class="container mt-4">
+    <div id="prescription" class="prescription-container">
+      {{#each prescricoes}}
+      <div class="prescription-item">
+        <h3>{{DadosPaciente.nome}}</h3>
+        <p><strong>Data da prescrição:</strong> <span class="date">{{data}}</span></p>
+        <p><strong>Idade:</strong> {{DadosPaciente.idade}}</p>
+        <p><strong>Recomendação de Dieta:</strong> {{dieta}}</p>
+        <p><strong>Suplementos:</strong> {{suplementos}}</p>
+        <div class="excluir">
+          <i class="fas fa-trash"></i>
+        </div>
+      </div>
+      <div class="delete-prescricao">
+        <div class="aviso-content">
+          <form
+            action="/delete/{{../nutricionistas.id_nutri}}/registro/{{DadosPaciente.id_pacientes}}/prescricao/{{id_prescricao}}"
+            method="post">
+            <h2>Confirmação de Exclusão</h2>
+            <p>Tem certeza de que deseja excluir esta prescrição?</p>
+            <button class="btn btn-danger" id="confirm-delete">Sim, Excluir</button>
+            <button class="btn btn-secondary" type="button" id="cancel-delete">Cancelar</button>
+          </form>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </main>
+  {{else}}
+  <h3 class="text-center">Nenhuma prescrição registrada</h3>
+  {{/if}}
+
+  <script src="/js/home/pages/list_presc.js"></script>
+</body>
+
+</html>

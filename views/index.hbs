@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Conheça o SANH</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <!-- ================================ CSS ================================ -->
+  <link rel="stylesheet" href="/css/index.css">
+  <!-- ================================ FONT AWESOME ================================ -->
+  <link rel="stylesheet" href="/frameworks/awesome/css/fontawesome.css">
+  <!-- ================================ JAVASCRIPT ================================ -->
+  <script src="/js/index.js" defer></script>
+  <!-- ================================ AOS ================================ -->
+  <link href="/frameworks/aos/aos.css" rel="stylesheet">
+  <script src="/frameworks/aos/aos.js"></script>
+
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#">
+          <img src="/img/index/logo.png" alt="logo" class="logo">
+        </a>
+        <ul class="ul">
+          <li><a href="/">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#dev">Dev's</a></li>
+          <li><a href="/login" class="btn login">Entrar</a></li>
+          <div class="close-icon" onclick="closeMenu()">
+            <i class="fa-sharp fa-solid fa-circle-xmark"></i>
+          </div>
+        </ul>
+        <!-- menu mobile -->
+        <div class="menu-icon" onclick="openMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+      <section class="banner">
+        <div class="banner-text">
+          <h4>Sistema de Acompanhamento Nutricional Hospitalar</h4>
+          <h1>SANH</h1>
+          <p>Software de Nutrição Hospitalar que facilita o trabalho dos profissionais de saúde</p>
+          <a href="/cadastro" class="btn">Cadastre-se</a>
+        </div>
+      </section>
+    </div>
+  </header>
+  <!-- SOBRE================================================================================================-->
+  <section class="sobre" id="sobre">
+    <div class="container">
+      <div class="text">
+        <h3 data-aos="zoom-in" data-aos-duration="1000">Sobre Nós</h3>
+        <p data-aos="fade-up" data-aos-duration="1000">Com uma equipe de especialistas altamente qualificados, o
+          SANH desenvolveu um sistema inovador que facilita o acompanhamento nutricional em um ambiente
+          hospitalar. Nossas ferramentas de software intuitivas e fáceis de usar permitem que os profissionais
+          da saúde monitorarem, registrarem e avaliarem seus pacientes de forma eficiente, simplificando e
+          aprimorando o processo de cuidados nutricionais.</p>
+      </div>
+      <div data-aos="fade-right" data-aos-duration="1500" class="sobre-img">
+        <img src="img/index/bg-transformed.jpeg" alt="sobre img">
+      </div>
+    </div>
+  </section>
+  <section class="sobre">
+    <div class="container">
+      <div class="sobre-img" data-aos="fade-right" data-aos-duration="1500">
+        <img src="img/index/pexels-jane-doan-1092730.jpg" alt="sobre img">
+      </div>
+      <div class="text">
+        <h3 class="missao" data-aos="zoom-in" data-aos-duration="1000">Nossa Missão</h3>
+        <p data-aos="fade-up" data-aos-duration="1000">é fornecer soluções tecnológicas inovadoras e de alto
+          desempenho para profissionais da área da saúde, com foco no acompanhamento nutricional hospitalar.
+          Nosso objetivo é facilitar o acesso a ferramentas eficientes que permitam um tratamento
+          personalizado e eficaz para pacientes, melhorando a qualidade de vida e a recuperação, enquanto
+          aumentamos a satisfação dos profissionais de saúde.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divisoria">
+
+  <!-- CARD  DEVS ==============================================================================================-->
+  <section class="devs" id="dev">
+    <div class="text">
+      <h3 id="title" data-aos="zoom-in" data-aos-duration="1000">Quem somos?</h3>
+      <p id="description" data-aos="fade-up" data-aos-duration="1000">Conheça a equipe por trás do SANH:</p>
+    </div>
+    <div class="devs-card" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine"
+      data-aos-duration="1000">
+      <div class="card">
+        <div class="card__inner">
+          <div class="card__face card__face--front">
+            <h2>Front-End</h2>
+          </div>
+          <div class="card__face card__face--back">
+            <div class="card__content">
+              <div class="card__header">
+                <img src="img/index/gaby..jpeg" alt="" class="pp" />
+                <h2>Gabryhellen</h2>
+              </div>
+              <div class="card__body">
+                <h3> Gabryhellen Medeiros </h3>
+                <p>Tenho 17 anos e estou atualmente cursando o segundo ano do curso <strong>técnico em
+                    Desenvolvimento de Sistemas.</strong> Para me conhecer melhor siga-me<br> <i
+                    class="fa-brands fa-instagram"></i> <strong class="instagram">@gabryhellenmedeiros</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__inner">
+          <div class="card__face card__face--front">
+            <h2>Front-End</h2>
+          </div>
+          <div class="card__face card__face--back">
+            <div class="card__content">
+              <div class="card__header">
+                <img src="img/index/nicodemos.jpeg" alt="" class="pp" />
+                <h2>Nicodemos</h2>
+              </div>
+              <div class="card__body">
+                <h3> José Nicodemos</h3>
+                <p>Tenho 16 anos e estou atualmente cursando o segundo ano do curso <strong>técnico em
+                    Desenvolvimento de Sistemas.</strong> Para me conhecer melhor siga-me<br> <i
+                    class="fa-brands fa-instagram"></i> <strong class="instagram">@jnicodemos__</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__inner">
+          <div class="card__face card__face--front">
+            <h2>Back-End</h2>
+          </div>
+          <div class="card__face card__face--back">
+            <div class="card__content">
+              <div class="card__header">
+                <img src="img/index/lucas.png" alt="back-end dev" class="pp" />
+                <h2>Lucas</h2>
+              </div>
+              <div class="card__body">
+                <h3>Lucas de Paulo</h3>
+                <p>Tenho 17 anos e estou atualmente cursando o segundo ano do curso <strong>técnico em
+                    Desenvolvimento de Sistemas.</strong> Para me conhecer melhor siga-me<br> <i
+                    class="fa-brands fa-instagram"></i> <strong class="instagram">@luscagomesss</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__inner">
+          <div class="card__face card__face--front">
+            <h2>Back-End</h2>
+          </div>
+          <div class="card__face card__face--back">
+            <div class="card__content">
+              <div class="card__header">
+                <img src="img/index/marcelo.jpeg" alt="back-end dev" class="pp" />
+                <h2>Marcelo</h2>
+              </div>
+              <div class="card__body">
+                <h3> Marcelo Fonseca </h3>
+                <p>Tenho 16 anos e estou atualmente cursando o segundo ano do curso <strong>técnico em
+                    Redes de Computadores.</strong> Para me conhecer melhor siga-me<br> <i
+                    class="fa-brands fa-instagram"></i> <strong class="instagram">@marrcelofonsecaa</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer =======================================================================================-->
+  <footer class="footer" data-aos="fade-up" data-aos-duration="1200">
+    <div class="container">
+      <div>
+        <a href="/">
+          <img src="/img/index/logo.png" alt="">
+        </a>
+      </div>
+      <p>&copy; SANH 2023 | Todos os direitos reservados</p>
+    </div>
+  </footer>
+</body>
+
+</html>
