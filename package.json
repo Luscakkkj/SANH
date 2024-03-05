@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon -e js app.js",
-    "start": "npm run migrate && node app.js",
+    "start": "node app.js",
     "database": "npx sequelize db:create",
     "migrate": "npx sequelize db:migrate",
     "undo": "npx sequelize db:migrate:undo:all"
