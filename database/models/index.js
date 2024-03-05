@@ -7,14 +7,10 @@ const env = process.env.NODE_ENV ;
 const config = require('../config/config.js')[env];
 const db = {};
 
-let sequelize;
-if (config.use_env_variable) {
-	sequelize = new Sequelize(process.env[config.use_env_variable], config);
-} else {
-	sequelize = new Sequelize(config.database, config.username, config.password, config);
-}
+const sequelize = new Sequelize(config.database, config.username, config.password, config);
 
 sequelize.authenticate().then(() => {console.log('Conexão bem sucessida');}).catch((error)=> {console.log(`LIGA O XAMPP`);})
+
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
