@@ -3,7 +3,7 @@
 const { Sequelize } = require('sequelize');
 require('dotenv').config()
 const process = require('process');
-const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV ;
 const config = require('../config/config.js')[env];
 const db = {};
 
