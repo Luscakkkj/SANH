@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch app.js",
-    "start": "node --env-file=.env app.js",
+    "start": "node app.js",
     "database": "npx sequelize db:create",
     "migrate": "npx sequelize db:migrate",
     "undo": "npx sequelize db:migrate:undo:all"
